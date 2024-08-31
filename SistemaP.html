@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="Diseños/SistemasD.css">
+</head>
+<body>
+    <!-- Imagen de fondo en un contenedor -->
+    <div class="header-img">
+        <!-- Imagen de ejemplo, reemplaza con la ruta de tu imagen -->
+    </div>
+
+    <h1>Gestión de Productos</h1>
+    <form id="productForm">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="productName">Nombre del Producto:</label>
+                <input type="text" id="productName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="productCode">Código del Producto:</label>
+                <input type="text" id="productCode" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="productQuantity">Cantidad:</label>
+                <input type="number" id="productQuantity" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productDispo">Disponible:</label>
+                <input type="number" id="productDispo" min="1" required>
+            </div>
+
+            <!-- Contenedor para el botón -->
+            <div class="button-container">
+                <button type="submit">Guardar Producto</button>
+            </div>
+        </div>
+    </form>
+
+    <h2>Lista de Productos</h2>
+    <div class="table-container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Código del Producto</th>
+                    <th>Cantidad</th>
+                    <th>Disponible</th>
+                </tr>
+            </thead>
+            <tbody id="productList">
+                <!-- Los productos guardados aparecerán aquí -->
+            </tbody>
+        </table>
+        <!-- Botón adicional al lado de la tabla -->
+        <div class="action-button-container">
+            <button id="additionalButton">Acción Adicional</button>
+        </div>
+    </div>
+
+    <script src="Modelos/Sistemas.js"></script>
+</body>
+</html>

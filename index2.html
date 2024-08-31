@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarte</title>
+    <link rel="stylesheet" href="Diseños/LoginD.css">
+    <!-- SweetAlert script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Registrarte</h1>
+        <form action="#" name="ejemplo" method="POST" onsubmit="return validatePasswords()">
+            <div class="form-group">
+                <label for="usuario_reg">Usuario*</label>
+                <input type="text" name="usuario_reg" id="usuario_reg" placeholder="" required>
+            </div>
+            <div class="form-group">
+                <label for="gmail_reg">E-mail*</label>
+                <input type="email" name="gmail_reg" id="gmail_reg" placeholder="" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena_reg">Contraseña*</label>
+                <input type="password" name="contrasena_reg" id="contrasena_reg" placeholder="" required>
+                <input type="checkbox" id="showPassword" onclick="togglePassword()"> Mostrar contraseña
+            </div>
+            <div class="form-group">
+                <label for="Concontrasena2_reg">Confirmar contraseña*</label>
+                <input type="password" name="Concontrasena2_reg" id="Concontrasena2_reg" placeholder="" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" name="solo" id="SaveUser">Registrar</button>
+            </div>
+            <div class="link-container">
+                <p><a href="index.html">¿Ya tienes una cuenta? Inicia Sesión</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- Script para manejar las funcionalidades de la página -->
+<script src="Modelos/FireBase.js"></script>
+
+</body>
+</html>

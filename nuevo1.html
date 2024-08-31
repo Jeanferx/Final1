@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    
+    <!-- Importa Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics-compat.js"></script>
+</head>
+<body>
+    
+</body>
+<script>
+    // Tu configuración de Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyBLBR-GVUhBpKnq7OTTfHXxbd2TdKfqVkE",
+        authDomain: "proyecto1-fda8b.firebaseapp.com",
+        projectId: "proyecto1-fda8b",
+        storageBucket: "proyecto1-fda8b.appspot.com",
+        messagingSenderId: "887775106470",
+        appId: "1:887775106470:web:453bc8c9ef8cb368f3eb67",
+        measurementId: "G-RPJDM407WG"
+    };
+  
+    // Inicializa Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const analytics = firebase.getAnalytics(app);
+    const db = firebase.firestore(app);
+    
+    // Añade un nuevo documento a Firestore
+    db.collection("user").add({
+        first: "Ada",
+        last: "Lovelace",
+        born: 1815
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+</script>
+</html>

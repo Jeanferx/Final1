@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* 100% del alto del viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrar verticalmente */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Superposición oscura */
+        url(Imagenes/Inicio.jpg); /* Ruta a tu imagen */
+    background-size: 35%; /* Ajusta el tamaño de la imagen al 90% */
+    background-color: #585858; /* Color de fondo gris */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+
+
+
+.container {
+    width: 400px;
+    margin: 100px auto;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;/*VALAREZOOOOOOO*/
+    font-size: 2.5em; /* Aumenta el tamaño de la fuente */
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffd4d4;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 12px);
+    padding: 9px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+
+
+.form-group {
+    margin-bottom: 10px;
+    background-color: #217e2100;
+    
+}
+
+.button-container {
+    width: 102%;
+    overflow: hidden; /* Evita problemas de flotación */
+}
+
+.button-container button {
+    float: left; /* Coloca los botones uno al lado del otro */
+    width: calc(100%); /* Divide el contenedor en dos columnas con espacio entre ellas */
+    
+    padding: 10px;
+    background-color: #11a511; /* Color de fondo */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-container button:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último botón */
+}
+
+.link-container {
+    float: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; /*separa los botones con los links*/
+}
+
+.link-container a {
+    color: #06c48bb0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-container a:hover {
+    color: #01af09;
+    text-decoration: underline;
+}
+/* CSS para el checkbox de mostrar contraseña */
+.form-group #showPassword {
+    margin-top: 10px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #ffd4d4;
+    display: block; /* Mantiene los elementos alineados */
+}
+
+#showPassword {
+    margin-left: 5px;
+}
