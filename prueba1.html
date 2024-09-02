@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+
+    <!-- Formulario de Registro -->
+    <form id="registroForm">
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <!-- Mensaje de estado -->
+    <p id="estado"></p>
+
+    <!-- Firebase App (es necesario) y Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+
+    <script>
+        // Configuración de Firebase: Asegúrate de reemplazar esto con tu propia configuración
+        const firebaseConfig = {
+    apiKey: "AIzaSyA-nsMq6y448Vqs60ETwuydnvtLLg21jsY",
+    authDomain: "pagweb-a0d75.firebaseapp.com",
+    projectId: "pagweb-a0d75",
+    storageBucket: "pagweb-a0d75.appspot.com",
+    messagingSenderId: "574754884989",
+    appId: "1:574754884989:web:71072f9708af0c5d7fd014"
+    };
+
+        // Inicializar Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+
+        // Inicializar el servicio de autenticación
+        const auth = firebase.auth();
+
+        // Obtener elementos del DOM
+        const registroForm = document.getElementById('registroForm');
+        const estado = document.getElementById('estado');
+
+        // Manejar el evento de envío del formulario
+        registroForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evitar la recarga de la página
+
+            // Obtener los valores de los campos de entrada
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Crear usuario con email y contraseña
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Usuario registrado con éxito
+                    const user = userCredential.user;
+                    estado.textContent = `Usuario registrado: ${user.email}`;
+                })
+                .catch((error) => {
+                    // Manejar errores
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    estado.textContent = `Error en el registro: ${errorMessage}`;
+                });
+        });
+    </script>
+</body>
+</html>
